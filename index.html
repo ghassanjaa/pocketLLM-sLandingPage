@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PocketLLM — Local AI, Entirely On-Device</title>
+  <meta name="description" content="PocketLLM runs powerful language models entirely on your iPhone or iPad. No cloud. No data sent anywhere. Your conversations stay yours." />
+  <meta name="author" content="Ghassan Jaam" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="PocketLLM — Local AI, Entirely On-Device" />
+  <meta property="og:description" content="Run powerful LLMs right on your device. Private by design. No internet required." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Index-specific tweaks */
+    .hero-device {
+      margin-top: 52px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .device-mockup {
+      width: 220px;
+      aspect-ratio: 9/19;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow:
+        0 0 0 1px var(--border),
+        0 24px 64px rgba(0, 0, 0, 0.12);
+    }
+
+    .device-mockup::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 6px;
+      background: var(--border);
+      border-radius: 100px;
+    }
+
+    .device-screen {
+      width: calc(100% - 16px);
+      height: calc(100% - 28px);
+      background: var(--bg);
+      border-radius: 28px;
+      margin-top: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 16px 14px;
+      gap: 8px;
+      overflow: hidden;
+    }
+
+    .chat-bubble {
+      background: var(--accent-light);
+      border-radius: 14px 14px 14px 4px;
+      padding: 8px 12px;
+      font-size: 0.62rem;
+      color: var(--accent);
+      font-weight: 500;
+      max-width: 80%;
+      line-height: 1.4;
+    }
+
+    .chat-bubble.user {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 14px 14px 4px 14px;
+      align-self: flex-end;
+    }
+
+    .chat-bubble.typing {
+      display: flex;
+      gap: 3px;
+      align-items: center;
+      padding: 10px 14px;
+    }
+
+    .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 1.2s infinite ease-in-out;
+    }
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes pulse {
+      0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+      40% { opacity: 1; transform: scale(1); }
+    }
+
+    .on-device-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 28px;
+    }
+
+    .on-device-tag .dot-green {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <div class="nav-inner">
+        <a class="nav-brand" href="index.html">Pocket<span>LLM</span></a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">100% On-Device AI</div>
+        <h1>AI that stays on<br /><span>your device</span></h1>
+        <p>
+          PocketLLM runs powerful large language models entirely on your iPhone or iPad.
+          No cloud servers. No data sent anywhere. No subscription required to think.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="https://apps.apple.com/app/pocketllm/id0000000000" rel="noopener noreferrer">
+            Download on the App Store
+          </a>
+          <a class="btn btn-outline" href="privacy.html">Privacy Policy</a>
+        </div>
+
+        <div class="on-device-tag">
+          <span class="dot-green"></span>
+          Inference running on-device &mdash; zero network requests
+        </div>
+
+        <!-- Phone mockup -->
+        <div class="hero-device" aria-hidden="true">
+          <div class="device-mockup">
+            <div class="device-screen">
+              <div class="chat-bubble">What is quantum entanglement?</div>
+              <div class="chat-bubble user">Explain it simply, no jargon.</div>
+              <div class="chat-bubble typing">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Features -->
+    <section class="features">
+      <div class="container">
+        <p class="features-label">Why PocketLLM</p>
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <span class="feature-icon" aria-hidden="true">&#128274;</span>
+            <h3>Private by Design</h3>
+            <p>
+              Your conversations never leave your device. No account required.
+              No analytics. No telemetry. What you type is yours alone.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-icon" aria-hidden="true">&#9992;&#65039;</span>
+            <h3>Fully Offline</h3>
+            <p>
+              Works on a plane, in a basement, in a country with restricted internet.
+              Once a model is downloaded, PocketLLM needs zero connectivity to run.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-icon" aria-hidden="true">&#9889;</span>
+            <h3>Genuinely Powerful</h3>
+            <p>
+              Runs quantized open-weight models optimized for Apple Silicon.
+              Fast inference, multiple model support, and voice input — all local.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="mailto:axesalon@hotmail.ca">Contact</a></li>
+      </ul>
+      <p>&copy; 2026 Ghassan Jaam &middot; PocketLLM</p>
+    </div>
+  </footer>
+
+</body>
+</html>
