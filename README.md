@@ -41,4 +41,4 @@ Then visit `http://localhost:8080`.
 
 ## Contact
 
-Ghassan Jaam — axesalon@hotmail.ca
+Ghassan Jaam — [GitHub](https://github.com/ghassanjaa)
