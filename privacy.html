@@ -29,7 +29,7 @@
 
       <header class="page-header">
         <h1>Privacy Policy</h1>
-        <p class="effective-date">Effective date: May 25, 2026 &nbsp;&middot;&nbsp; Developer: Ghassan Jaam &nbsp;&middot;&nbsp; App: PocketLLM (com.ghassanjaam.PocketLLM)</p>
+        <p class="effective-date">Effective date: October 30, 2026 &nbsp;&middot;&nbsp; Developer: Ghassan Jaam &nbsp;&middot;&nbsp; App: PocketLLM (com.ghassanjaam.PocketLLM)</p>
       </header>
 
       <div class="prose">
@@ -37,28 +37,29 @@
         <section>
           <h2>1. Overview</h2>
           <p>
-            PocketLLM is built on a simple principle: <strong>your data never leaves your device</strong>.
-            We do not operate servers that process your conversations, queries, or personal information.
-            We do not run analytics pipelines, sell data to third parties, or collect information for
-            advertising purposes. This policy describes, in plain language, exactly what data the app
-            touches and why.
+            PocketLLM is built on a simple principle: <strong>your conversations stay on your device</strong>.
+            We do not operate servers that process your conversations, queries, or personal information,
+            and we do not receive them. We do not run analytics, sell data, or collect information for
+            advertising. A small number of features do contact third-party services, and this policy lists
+            every one of them (sections 4, 5, 7 and 9) so you can decide what to use.
           </p>
         </section>
 
         <section>
           <h2>2. Data We Do Not Collect</h2>
-          <p>PocketLLM does <strong>not</strong> collect, transmit, store, or share any of the following:</p>
+          <p>The developer of PocketLLM does <strong>not</strong> receive, collect, or store any of the following:</p>
           <ul>
             <li>Chat messages, prompts, or AI responses</li>
             <li>Voice recordings or transcriptions</li>
-            <li>Device identifiers, IP addresses, or location data</li>
-            <li>Usage statistics, crash reports sent to our servers, or analytics events</li>
+            <li>Location data</li>
+            <li>Usage statistics, crash reports, or analytics events</li>
             <li>Names, email addresses, or any account information (no account is required)</li>
-            <li>Photos, contacts, calendars, or any other system data</li>
+            <li>Photos, contacts, calendars, files, or any other system data (features that index these do so on your device only)</li>
           </ul>
           <p>
             There is no PocketLLM backend server. There is no database with your records.
-            There is no dashboard where we can view your activity, because no activity data is ever sent to us.
+            There is no dashboard where we can view your activity. The third-party services described
+            below receive only the limited data listed there.
           </p>
         </section>
 
@@ -67,9 +68,10 @@
           <p>
             All language model inference — the process of generating AI responses — occurs entirely on
             your device using Apple's hardware accelerators (Neural Engine, GPU, and CPU). Your prompts
-            and the model's responses are processed in memory on your iPhone or iPad and are never
-            transmitted over the network. PocketLLM does not send your text to any cloud API, including
-            OpenAI, Anthropic, Google, or any other provider.
+            and the model's responses are processed in memory on your iPhone or iPad. PocketLLM does not
+            send your conversations to any cloud AI API, including OpenAI, Anthropic, Google, or any other
+            provider. The only text that can leave your device because of a chat is the optional web
+            search query described in section 4a.
           </p>
         </section>
 
@@ -96,14 +98,43 @@
         </section>
 
         <section>
+          <h2>4a. Web Search (optional, off until you allow it)</h2>
+          <p>
+            In Agent mode the assistant can search the web. PocketLLM asks for your permission before
+            this is ever used, and you can change your answer at any time in Settings &gt; Privacy &amp;
+            Security. If you allow it, the search words the assistant writes &mdash; which can include
+            details from your message &mdash; are sent over HTTPS to
+            <strong>DuckDuckGo</strong> (api.duckduckgo.com) and are subject to
+            <a href="https://duckduckgo.com/privacy" rel="noopener noreferrer">DuckDuckGo's Privacy Policy</a>.
+            Your full conversation, files, photos, calendar, and memory are never sent. If you decline,
+            or if you turn on &ldquo;Block all network egress&rdquo;, no web search request is made.
+          </p>
+        </section>
+
+        <section>
+          <h2>4b. Reporting a Response (optional)</h2>
+          <p>
+            You can report an AI response from the chat menu. Nothing is sent unless you choose
+            &ldquo;Send report by email&rdquo;, which opens your own mail app with a draft containing
+            the response text, the reason you picked, any note you add, the model name, and the app
+            version. You can edit or discard the draft before sending. Reports go to
+            <a href="mailto:gassanjaam@gmail.com">gassanjaam@gmail.com</a> and are used only to review
+            and improve the app.
+          </p>
+        </section>
+
+        <section>
           <h2>5. Voice &amp; Microphone Access</h2>
           <p>
             PocketLLM may request microphone permission to enable voice input. If you grant this
-            permission, audio is captured and processed <strong>entirely on-device</strong> using
-            Apple's Speech framework or an equivalent on-device transcription engine. Voice audio
-            and transcribed text are <strong>never transmitted</strong> to PocketLLM servers or any
-            third-party speech API. Microphone access is only active when you are actively using the
-            voice input feature; the app does not listen in the background.
+            permission, speech is transcribed with Apple's Speech framework. Where your language
+            supports it, PocketLLM requires <strong>on-device</strong> recognition and the audio does not
+            leave your device. For languages that Apple does not support on-device, iOS may process the
+            audio on Apple's servers, under
+            <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple's Privacy Policy</a>.
+            Voice audio and transcripts are never sent to PocketLLM or to any other third party. Microphone
+            access is only active when you are actively using voice features; the app does not listen in
+            the background.
           </p>
         </section>
 
@@ -112,10 +143,9 @@
           <p>
             PocketLLM uses Apple's <code>UserDefaults</code> and the app's sandboxed file system to
             store your preferences (e.g., selected model, UI settings, conversation history). This
-            data is stored <strong>only on your device</strong> and in your personal iCloud account
-            if you have iCloud Drive enabled for app data — in that case it is governed by Apple's
-            <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">iCloud Privacy Policy</a>.
-            We do not have access to your iCloud data.
+            data is stored <strong>only on your device</strong>. PocketLLM does not sync app data to
+            iCloud or any other cloud service — there is no iCloud/CloudKit sync of your
+            conversations, settings, or downloaded models.
           </p>
           <p>
             You can delete all app data at any time by uninstalling PocketLLM from your device.
@@ -126,12 +156,14 @@
           <h2>7. In-App Purchases &amp; Subscriptions</h2>
           <p>
             PocketLLM offers optional in-app purchases and auto-renewing subscriptions to unlock
-            premium features. All payment processing is handled exclusively by
-            <strong>Apple's StoreKit framework</strong>. PocketLLM does not operate a payment
-            server, does not receive or store your credit card or billing information, and does not
-            have access to your Apple ID credentials. Purchase receipts are validated by Apple's
-            servers on your behalf. We receive only a confirmation of entitlement status (e.g.,
-            "subscription active") — nothing more.
+            premium features. Payments are processed by <strong>Apple</strong> through StoreKit; PocketLLM
+            never receives or stores your credit card or billing information or your Apple ID credentials.
+            To manage which features are unlocked, PocketLLM uses <strong>RevenueCat</strong>, a third-party
+            purchase service. RevenueCat receives an anonymous app user ID that it generates, your purchase
+            receipt and entitlement status, and basic device and app information such as your IP address, OS
+            version, and app version, under
+            <a href="https://www.revenuecat.com/privacy" rel="noopener noreferrer">RevenueCat's Privacy Policy</a>.
+            It does not receive your conversations or any content you create in the app.
           </p>
           <p>
             For purchase history, refunds, or billing questions, please contact Apple Support or
@@ -152,26 +184,30 @@
         <section>
           <h2>9. Third-Party SDKs &amp; Frameworks</h2>
           <p>
-            PocketLLM uses only Apple's first-party frameworks (Swift standard library, Foundation,
-            SwiftUI, AVFoundation, Speech, StoreKit, etc.) and does not embed third-party analytics,
-            advertising, or crash-reporting SDKs that phone home to external servers.
+            PocketLLM uses Apple's first-party frameworks (Swift standard library, Foundation,
+            SwiftUI, AVFoundation, Speech, StoreKit, etc.) alongside on-device, open-source machine
+            learning libraries &mdash; including MLX Swift and Hugging Face swift-transformers &mdash; that run AI models locally on
+            your device. These libraries perform inference only and do not transmit data. The one
+            third-party SDK that contacts its own servers is <strong>RevenueCat</strong> (section 7).
+            PocketLLM does not embed analytics, advertising, or crash-reporting SDKs.
           </p>
         </section>
 
         <section>
           <h2>10. Data Retention</h2>
           <p>
-            Because we collect no data, we have nothing to retain. All information generated within
-            PocketLLM — your conversations, settings, and downloaded models — resides exclusively
-            on your device under your control, and is deleted when you delete the app.
+            We do not collect your content, so we have nothing to retain. Your conversations, settings, and
+            downloaded models reside on your device under your control and are deleted when you delete the
+            app. Data held by third parties (RevenueCat, DuckDuckGo, HuggingFace, Apple) is retained under
+            their own policies.
           </p>
         </section>
 
         <section>
           <h2>11. Your Rights</h2>
           <p>
-            You have full control over all data associated with PocketLLM because it never leaves
-            your device. To exercise that control:
+            You have full control over the data in PocketLLM because your conversations stay on your
+            device. To exercise that control:
           </p>
           <ul>
             <li><strong>Access / Export:</strong> Your conversation history and settings are accessible via the iOS Files app in the PocketLLM sandbox.</li>
@@ -180,8 +216,9 @@
           </ul>
           <p>
             If you are located in the European Union, you may have additional rights under the GDPR.
-            Because no personal data is collected or processed by us, there is no data subject request
-            we need to fulfill, but you are welcome to contact us with any questions.
+            We do not hold your conversations or content, so there is little for us to provide in a data
+            request. For data held by RevenueCat or other third parties, please contact them using the links
+            above. You are welcome to contact us with any questions.
           </p>
         </section>
 
@@ -202,7 +239,7 @@
           </p>
           <p>
             <strong>Ghassan Jaam</strong><br />
-            GitHub: <a href="https://github.com/ghassanjaa/pocketLLM-sLandingPage/issues">github.com/ghassanjaa/pocketLLM-sLandingPage</a>
+            Email: <a href="mailto:gassanjaam@gmail.com">gassanjaam@gmail.com</a>
           </p>
           <p>We aim to respond to all inquiries within 7 business days.</p>
         </section>
@@ -218,7 +255,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="https://github.com/ghassanjaa/pocketLLM-sLandingPage/issues">Contact</a></li>
+        <li><a href="mailto:gassanjaam@gmail.com">Contact</a></li>
       </ul>
       <p>&copy; 2026 Ghassan Jaam &middot; PocketLLM</p>
     </div>
